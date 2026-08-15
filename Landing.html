@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdPesa - Monetize Your Ads with Instant M-Pesa Payouts</title>
+    <!-- Tailwind CSS CDN for instant styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #059669 0%, #10B981 50%, #047857 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <span class="text-2xl font-bold text-emerald-600">AdPesa</span>
+                </div>
+                <div class="hidden md:flex items-center gap-8 font-medium text-gray-600">
+                    <a href="#features" class="hover:text-emerald-600 transition">Features</a>
+                    <a href="#how-it-works" class="hover:text-emerald-600 transition">How it Works</a>
+                    <a href="#pricing" class="hover:text-emerald-600 transition">Pricing</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button id="nav-login-btn" class="text-gray-600 hover:text-emerald-600 font-medium px-3 py-2">Log In</button>
+                    <button id="nav-signup-btn" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-5 py-2.5 rounded-lg shadow-sm transition">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                Turn Your Ad Revenue Into Instant <span class="underline decoration-emerald-300">M-Pesa Payouts</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-emerald-100 max-w-2xl mx-auto mb-10">
+                AdPesa connects publishers and advertisers across East Africa with automated, real-time mobile money payouts. No waiting 30 days for earnings.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button id="hero-get-started-btn" class="bg-white text-emerald-700 hover:bg-emerald-50 font-bold px-8 py-4 rounded-xl shadow-lg text-lg transition">
+                    Start Earning Today
+                </button>
+                <button id="hero-demo-btn" class="bg-emerald-800 bg-opacity-40 hover:bg-opacity-60 border border-emerald-300 text-white font-semibold px-8 py-4 rounded-xl text-lg transition">
+                    Watch Demo
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900">Why Choose AdPesa?</h2>
+                <p class="text-gray-600 mt-2">Built specifically for the mobile-first African ecosystem.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 border border-gray-100 rounded-2xl bg-gray-50 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 text-2xl mb-4">⚡</div>
+                    <h3 class="text-xl font-bold mb-2">Instant Payouts</h3>
+                    <p class="text-gray-600">Withdraw your ad revenues directly to M-Pesa immediately after reaching the minimum threshold.</p>
+                </div>
+                <div class="p-6 border border-gray-100 rounded-2xl bg-gray-50 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 text-2xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold mb-2">Real-time Analytics</h3>
+                    <p class="text-gray-600">Track impressions, clicks, CTR, and revenue accrual as it happens in your customized dashboard.</p>
+                </div>
+                <div class="p-6 border border-gray-100 rounded-2xl bg-gray-50 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 text-2xl mb-4">🛡️</div>
+                    <h3 class="text-xl font-bold mb-2">Fraud Protection</h3>
+                    <p class="text-gray-600">Smart bot detection algorithms ensure advertisers pay only for genuine, high-converting engagement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Quick Action Modal Trigger -->
+    <section class="py-16 bg-gray-900 text-white text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-4">Ready to boost your ad earnings?</h2>
+            <p class="text-gray-400 mb-8">Join thousands of publishers using AdPesa for seamless mobile money settlement.</p>
+            <button id="cta-register-btn" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-8 py-3.5 rounded-lg transition">
+                Create Free Account
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-gray-500 py-8 text-center text-sm">
+        <p>&copy; 2026 AdPesa Technologies. All rights reserved.</p>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Helper function for handling button actions safely
+            const handleAction = (actionName, targetUrl = null) => {
+                console.log(`Action triggered: ${actionName}`);
+                if (targetUrl) {
+                    window.location.href = targetUrl;
+                } else {
+                    alert(`${actionName} button clicked! You can link this to a route or modal.`);
+                }
+            };
+
+            // Attach event listeners to all landing page buttons by ID
+            document.getElementById('nav-login-btn')?.addEventListener('click', () => {
+                handleAction('Login');
+            });
+
+            document.getElementById('nav-signup-btn')?.addEventListener('click', () => {
+                handleAction('Sign Up');
+            });
+
+            document.getElementById('hero-get-started-btn')?.addEventListener('click', () => {
+                handleAction('Get Started');
+            });
+
+            document.getElementById('hero-demo-btn')?.addEventListener('click', () => {
+                handleAction('Watch Demo');
+            });
+
+            document.getElementById('cta-register-btn')?.addEventListener('click', () => {
+                handleAction('Create Account');
+            });
+
+        });
+    </script>
+</body>
+</html>
