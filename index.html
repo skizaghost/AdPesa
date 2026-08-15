@@ -81,5 +81,27 @@
 
     </div>
 
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Prevent default jump behavior on empty anchor tag buttons
+    const dummyButtons = document.querySelectorAll('a[href="#"]');
+    dummyButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log('Button clicked:', button.innerText.trim());
+            // Add your custom logic here (e.g., redirect or open modal)
+        });
+    });
+
+    // 2. Attach click handlers to <button> elements
+    const actionButtons = document.querySelectorAll('button');
+    actionButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevents page reload if inside a form
+            alert(`Action triggered for: ${button.innerText.trim()}`);
+            // Replace the alert above with your actual app logic (e.g., M-Pesa API trigger)
+        });
+    });
+});
+
 </body>
 </html>
