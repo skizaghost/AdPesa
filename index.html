@@ -4,57 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AdPesa - Monetize Your Ads with Instant M-Pesa Payouts</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: { DEFAULT: '#E50914', hover: '#B91C1C', light: '#FEF2F2' },
+                        brandGreen: { DEFAULT: '#009A44', hover: '#007A36', light: '#F0FDF4' }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #059669 0%, #10B981 50%, #047857 100%);
+        .brand-gradient {
+            background: linear-gradient(135deg, #E50914 0%, #009A44 100%);
         }
-        /* Custom modal transition styles */
-        .modal-active {
-            display: flex !important;
-        }
+        .modal-active { display: flex !important; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+<body class="bg-slate-50 text-gray-800 font-sans antialiased">
 
     <!-- Navigation -->
     <nav class="bg-white shadow-sm fixed w-full top-0 z-40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
-                <div class="flex items-center gap-2">
-                    <a href="index.html" class="text-2xl font-bold text-emerald-600">AdPesa</a>
-                </div>
+                <a href="index.html" class="text-2xl font-black tracking-tight">
+                    <span class="text-brandRed">Ad</span><span class="text-brandGreen">Pesa</span>
+                </a>
                 <div class="hidden md:flex items-center gap-8 font-medium text-gray-600">
-                    <a href="#features" class="hover:text-emerald-600 transition">Features</a>
-                    <a href="#how-it-works" class="hover:text-emerald-600 transition">How it Works</a>
-                    <a href="#pricing" class="hover:text-emerald-600 transition">Pricing</a>
+                    <a href="#features" class="hover:text-brandRed transition">Features</a>
+                    <a href="#how-it-works" class="hover:text-brandRed transition">How it Works</a>
+                    <a href="#pricing" class="hover:text-brandRed transition">Pricing</a>
                 </div>
                 <div class="flex items-center gap-4">
-                    <!-- Linked to login.html -->
-                    <a href="login.html" id="nav-login-btn" class="text-gray-600 hover:text-emerald-600 font-medium px-3 py-2 transition">Log In</a>
-                    <!-- Linked to signup.html -->
-                    <a href="signup.html" id="nav-signup-btn" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-5 py-2.5 rounded-lg shadow-sm transition inline-block">Sign Up</a>
+                    <a href="login.html" class="text-gray-600 hover:text-brandGreen font-medium px-3 py-2 transition">Log In</a>
+                    <a href="signup.html" class="bg-brandRed hover:bg-brandRed-hover text-white font-medium px-5 py-2.5 rounded-lg shadow-sm transition">Sign Up</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 gradient-bg text-white">
+    <section class="pt-32 pb-20 brand-gradient text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-                Turn Your Ad Revenue Into Instant <span class="underline decoration-emerald-300">M-Pesa Payouts</span>
+                Turn Your Ad Revenue Into Instant <span class="underline decoration-yellow-300">M-Pesa Payouts</span>
             </h1>
-            <p class="text-lg sm:text-xl text-emerald-100 max-w-2xl mx-auto mb-10">
+            <p class="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto mb-10">
                 AdPesa connects publishers and advertisers across East Africa with automated, real-time mobile money payouts. No waiting 30 days for earnings.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="signup.html" id="hero-get-started-btn" class="bg-white text-emerald-700 hover:bg-emerald-50 font-bold px-8 py-4 rounded-xl shadow-lg text-lg transition inline-block">
+                <a href="signup.html" class="bg-brandGreen hover:bg-brandGreen-hover text-white font-bold px-8 py-4 rounded-xl shadow-lg text-lg transition">
                     Start Earning Today
                 </a>
-                <button id="hero-demo-btn" class="bg-emerald-800 bg-opacity-40 hover:bg-opacity-60 border border-emerald-300 text-white font-semibold px-8 py-4 rounded-xl text-lg transition">
-                    Watch Demo
+                <button id="hero-demo-btn" class="bg-black/30 hover:bg-black/50 border border-white/30 text-white font-semibold px-8 py-4 rounded-xl text-lg transition">
+                    Watch Demo ▶
                 </button>
             </div>
         </div>
@@ -64,22 +70,22 @@
     <section id="features" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900">Why Choose AdPesa?</h2>
+                <h2 class="text-3xl font-bold text-gray-900">Why Choose <span class="text-brandRed">Ad</span><span class="text-brandGreen">Pesa</span>?</h2>
                 <p class="text-gray-600 mt-2">Built specifically for the mobile-first African ecosystem.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-6 border border-gray-100 rounded-2xl bg-gray-50 hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 text-2xl mb-4">⚡</div>
+                <div class="p-6 border border-gray-100 rounded-2xl bg-brandGreen-light hover:shadow-md transition border-l-4 border-l-brandGreen">
+                    <div class="w-12 h-12 bg-brandGreen/10 rounded-xl flex items-center justify-center text-brandGreen text-2xl mb-4">⚡</div>
                     <h3 class="text-xl font-bold mb-2">Instant Payouts</h3>
                     <p class="text-gray-600">Withdraw your ad revenues directly to M-Pesa immediately after reaching the minimum threshold.</p>
                 </div>
-                <div class="p-6 border border-gray-100 rounded-2xl bg-gray-50 hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 text-2xl mb-4">📊</div>
+                <div class="p-6 border border-gray-100 rounded-2xl bg-brandRed-light hover:shadow-md transition border-l-4 border-l-brandRed">
+                    <div class="w-12 h-12 bg-brandRed/10 rounded-xl flex items-center justify-center text-brandRed text-2xl mb-4">📊</div>
                     <h3 class="text-xl font-bold mb-2">Real-time Analytics</h3>
                     <p class="text-gray-600">Track impressions, clicks, CTR, and revenue accrual as it happens in your customized dashboard.</p>
                 </div>
-                <div class="p-6 border border-gray-100 rounded-2xl bg-gray-50 hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 text-2xl mb-4">🛡️</div>
+                <div class="p-6 border border-gray-100 rounded-2xl bg-brandGreen-light hover:shadow-md transition border-l-4 border-l-brandGreen">
+                    <div class="w-12 h-12 bg-brandGreen/10 rounded-xl flex items-center justify-center text-brandGreen text-2xl mb-4">🛡️</div>
                     <h3 class="text-xl font-bold mb-2">Fraud Protection</h3>
                     <p class="text-gray-600">Smart bot detection algorithms ensure advertisers pay only for genuine, high-converting engagement.</p>
                 </div>
@@ -87,28 +93,27 @@
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="py-20 bg-slate-50 border-t border-b border-gray-100">
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-20 bg-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold text-gray-900">How It Works</h2>
-                <p class="text-gray-600 mt-2">Get started in three simple steps and monetize your platform effortlessly.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8 relative">
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 relative">
-                    <div class="w-10 h-10 bg-emerald-600 text-white font-bold rounded-full flex items-center justify-center mb-6">1</div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-900">Create an Account</h3>
-                    <p class="text-gray-600">Sign up as a Publisher or Advertiser in under two minutes and set up your profile details.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-brandRed">
+                    <div class="w-10 h-10 bg-brandRed text-white font-bold rounded-full flex items-center justify-center mb-6">1</div>
+                    <h3 class="text-xl font-bold mb-2">Create Account</h3>
+                    <p class="text-gray-600">Sign up as a Publisher or Advertiser in under two minutes.</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 relative">
-                    <div class="w-10 h-10 bg-emerald-600 text-white font-bold rounded-full flex items-center justify-center mb-6">2</div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-900">Embed Ad Placements</h3>
-                    <p class="text-gray-600">Copy our lightweight JavaScript snippet and place banner or native ad units onto your website.</p>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-gray-800">
+                    <div class="w-10 h-10 bg-gray-900 text-white font-bold rounded-full flex items-center justify-center mb-6">2</div>
+                    <h3 class="text-xl font-bold mb-2">Embed Ad Code</h3>
+                    <p class="text-gray-600">Copy our lightweight JS script onto your site or app.</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 relative">
-                    <div class="w-10 h-10 bg-emerald-600 text-white font-bold rounded-full flex items-center justify-center mb-6">3</div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-900">Get Paid via M-Pesa</h3>
-                    <p class="text-gray-600">Watch your revenue accrue in real time and trigger instant STK payouts straight to your phone.</p>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-brandGreen">
+                    <div class="w-10 h-10 bg-brandGreen text-white font-bold rounded-full flex items-center justify-center mb-6">3</div>
+                    <h3 class="text-xl font-bold mb-2">Get Paid via M-Pesa</h3>
+                    <p class="text-gray-600">Trigger instant STK payouts straight to your phone.</p>
                 </div>
             </div>
         </div>
@@ -119,185 +124,42 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold text-gray-900">Transparent Pricing</h2>
-                <p class="text-gray-600 mt-2">No hidden fees. Choose the model that fits your advertising or publishing needs.</p>
             </div>
             <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Publisher Plan -->
-                <div class="p-8 border border-gray-200 rounded-2xl bg-gray-50 flex flex-col justify-between">
+                <div class="p-8 border border-gray-200 rounded-2xl bg-slate-50 flex flex-col justify-between">
                     <div>
-                        <span class="text-xs font-semibold uppercase tracking-wider text-emerald-600 bg-emerald-100 px-3 py-1 rounded-full">For Content Creators</span>
-                        <h3 class="text-2xl font-bold text-gray-900 mt-4 mb-2">Publishers</h3>
-                        <p class="text-gray-600 text-sm mb-6">Monetize site traffic with flexible ad formats and zero monthly fees.</p>
-                        <div class="text-4xl font-extrabold text-gray-900 mb-6">Free <span class="text-base font-normal text-gray-500">to join</span></div>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-brandRed bg-brandRed-light px-3 py-1 rounded-full">Publishers</span>
+                        <h3 class="text-2xl font-bold text-gray-900 mt-4 mb-2">Content Creators</h3>
+                        <div class="text-4xl font-extrabold text-gray-900 my-4">Free</div>
                         <ul class="space-y-3 text-sm text-gray-600 mb-8">
-                            <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> 85% Revenue Share</li>
-                            <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> Instant M-Pesa Payouts</li>
-                            <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> Low Minimum Withdrawal (KES 100)</li>
-                            <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> Real-Time Impression & Click Tracking</li>
+                            <li>✓ 85% Revenue Share</li>
+                            <li>✓ Instant M-Pesa Payouts</li>
+                            <li>✓ Low Minimum Withdrawal (KES 100)</li>
                         </ul>
                     </div>
-                    <a href="signup.html" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-center font-bold py-3 rounded-lg transition">Start Monetizing</a>
+                    <a href="signup.html" class="w-full bg-brandRed hover:bg-brandRed-hover text-white text-center font-bold py-3 rounded-lg transition">Start Earning</a>
                 </div>
-                <!-- Advertiser Plan -->
-                <div class="p-8 border-2 border-emerald-500 rounded-2xl bg-white shadow-md flex flex-col justify-between relative">
-                    <span class="absolute -top-3 right-6 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Popular</span>
+                <div class="p-8 border-2 border-brandGreen rounded-2xl bg-white shadow-md flex flex-col justify-between relative">
+                    <span class="absolute -top-3 right-6 bg-brandGreen text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Advertisers</span>
                     <div>
-                        <span class="text-xs font-semibold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">For Brands & Marketers</span>
-                        <h3 class="text-2xl font-bold text-gray-900 mt-4 mb-2">Advertisers</h3>
-                        <p class="text-gray-600 text-sm mb-6">Run targeted mobile and web campaigns across high-converting networks.</p>
-                        <div class="text-4xl font-extrabold text-gray-900 mb-6">Pay-Per-Click <span class="text-base font-normal text-gray-500">/ Impression</span></div>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-brandGreen bg-brandGreen-light px-3 py-1 rounded-full">Brands</span>
+                        <h3 class="text-2xl font-bold text-gray-900 mt-4 mb-2">Campaigns</h3>
+                        <div class="text-4xl font-extrabold text-gray-900 my-4">Pay-Per-Click</div>
                         <ul class="space-y-3 text-sm text-gray-600 mb-8">
-                            <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> Instant M-Pesa Deposit / Campaign Budgeting</li>
-                            <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> Anti-Fraud & Bot Filtering</li>
-                            <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> Geo-Targeting across East Africa</li>
-                            <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> Automated Campaign Optimization</li>
+                            <li>✓ M-Pesa STK Push Deposits</li>
+                            <li>✓ Anti-Fraud Bot Protection</li>
+                            <li>✓ Geo-Targeting East Africa</li>
                         </ul>
                     </div>
-                    <a href="signup.html" class="w-full bg-gray-900 hover:bg-gray-800 text-white text-center font-bold py-3 rounded-lg transition">Launch Campaign</a>
+                    <a href="signup.html" class="w-full bg-brandGreen hover:bg-brandGreen-hover text-white text-center font-bold py-3 rounded-lg transition">Launch Campaign</a>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- CTA Section -->
-    <section class="py-16 bg-gray-900 text-white text-center">
-        <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-4">Ready to boost your ad earnings?</h2>
-            <p class="text-gray-400 mb-8">Join thousands of publishers using AdPesa for seamless mobile money settlement.</p>
-            <a href="signup.html" id="cta-register-btn" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-8 py-3.5 rounded-lg transition inline-block">
-                Create Free Account
-            </a>
-        </div>
-    </section>
-
-    <!-- M-PESA STK PUSH POPUP MODAL -->
-    <div id="mpesa-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 z-50 items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative overflow-hidden">
-            <!-- Modal Header -->
-            <div class="flex justify-between items-center mb-6 border-b pb-3">
-                <div class="flex items-center gap-2">
-                    <div class="bg-emerald-600 text-white px-2 py-1 rounded text-xs font-bold tracking-wider">M-PESA</div>
-                    <h3 class="text-lg font-bold text-gray-800">Express Checkout</h3>
-                </div>
-                <button id="close-modal-btn" class="text-gray-400 hover:text-gray-600 text-2xl font-bold leading-none">&times;</button>
-            </div>
-
-            <!-- State 1: Phone Input Form -->
-            <form id="stk-form" class="space-y-4">
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">M-Pesa Phone Number</label>
-                    <div class="relative">
-                        <span class="absolute left-3 top-2.5 text-gray-500 font-medium">+254</span>
-                        <input type="tel" id="phone-number" required placeholder="712345678" pattern="[0-9]{9}" 
-                            class="w-full pl-16 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                    </div>
-                    <p class="text-xs text-gray-500 mt-1">Enter your registered Safaricom M-Pesa number.</p>
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Deposit / Registration Amount (KES)</label>
-                    <input type="number" id="stk-amount" value="500" readonly 
-                        class="w-full px-4 py-2.5 bg-gray-100 border border-gray-200 rounded-lg font-bold text-emerald-700">
-                </div>
-                <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-lg shadow-md transition flex items-center justify-center gap-2">
-                    <span>Send STK Push</span>
-                    <span class="text-xl">📲</span>
-                </button>
-            </form>
-
-            <!-- State 2: Simulated STK Processing Loader -->
-            <div id="stk-loading" class="hidden text-center py-8 space-y-4">
-                <div class="inline-block animate-spin rounded-full h-12 w-12 border-4 border-emerald-500 border-t-transparent"></div>
-                <h4 class="font-bold text-gray-800 text-lg">Check Your Phone</h4>
-                <p class="text-sm text-gray-600 max-w-xs mx-auto">
-                    An M-Pesa PIN prompt has been sent to <span id="target-phone-display" class="font-bold text-emerald-600"></span>. Please enter your PIN to complete the setup.
-                </p>
-                <div class="bg-amber-50 border border-amber-200 text-amber-800 text-xs p-3 rounded-lg mt-4">
-                    ⏳ Waiting for M-Pesa Callback response...
-                </div>
-            </div>
-
-            <!-- State 3: Payment Success Confirmation -->
-            <div id="stk-success" class="hidden text-center py-6 space-y-4">
-                <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-3xl font-bold">✓</div>
-                <h4 class="font-bold text-gray-900 text-xl">Payment Verified!</h4>
-                <p class="text-sm text-gray-600">Transaction ID: <span id="txn-id" class="font-mono font-bold text-gray-800"></span></p>
-                <p class="text-xs text-emerald-600 font-semibold">Your AdPesa account is active. Redirecting to dashboard...</p>
-            </div>
-        </div>
-    </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-950 text-gray-500 py-8 text-center text-sm">
-        <p>&copy; 2026 AdPesa Technologies. All rights reserved.</p>
+    <footer class="bg-gray-950 text-gray-500 py-8 text-center text-sm border-t border-gray-800">
+        <p>&copy; 2026 <span class="text-brandRed">Ad</span><span class="text-brandGreen">Pesa</span> Technologies. All rights reserved.</p>
     </footer>
-
-    <!-- Interactive JavaScript Logic -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const modal = document.getElementById('mpesa-modal');
-            const closeModalBtn = document.getElementById('close-modal-btn');
-            const stkForm = document.getElementById('stk-form');
-            const stkLoading = document.getElementById('stk-loading');
-            const stkSuccess = document.getElementById('stk-success');
-            const phoneInput = document.getElementById('phone-number');
-            const phoneDisplay = document.getElementById('target-phone-display');
-            const txnIdDisplay = document.getElementById('txn-id');
-
-            const openModal = () => {
-                modal.classList.add('modal-active');
-                modal.classList.remove('hidden');
-                stkForm.classList.remove('hidden');
-                stkLoading.classList.add('hidden');
-                stkSuccess.classList.add('hidden');
-                phoneInput.value = '';
-            };
-
-            const closeModal = () => {
-                modal.classList.remove('modal-active');
-                modal.classList.add('hidden');
-            };
-
-            document.querySelectorAll('.trigger-stk').forEach(button => {
-                button.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    openModal();
-                });
-            });
-
-            closeModalBtn.addEventListener('click', closeModal);
-
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) closeModal();
-            });
-
-            stkForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const rawPhone = phoneInput.value.trim();
-                const formattedPhone = `+254 ${rawPhone}`;
-
-                stkForm.classList.add('hidden');
-                phoneDisplay.innerText = formattedPhone;
-                stkLoading.classList.remove('hidden');
-
-                setTimeout(() => {
-                    stkLoading.classList.add('hidden');
-                    const randomTxnId = 'RK' + Math.floor(10000000 + Math.random() * 90000000);
-                    txnIdDisplay.innerText = randomTxnId;
-                    
-                    stkSuccess.classList.remove('hidden');
-
-                    setTimeout(() => {
-                        closeModal();
-                        window.location.href = 'dashboard.html';
-                    }, 3500);
-
-                }, 4000);
-            });
-
-            document.getElementById('hero-demo-btn')?.addEventListener('click', () => {
-                alert('Opening AdPesa workflow video demo...');
-            });
-        });
-    </script>
 </body>
 </html>
