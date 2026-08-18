@@ -23,7 +23,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <div class="flex items-center gap-2">
-                    <span class="text-2xl font-bold text-emerald-600">AdPesa</span>
+                    <a href="index.html" class="text-2xl font-bold text-emerald-600">AdPesa</a>
                 </div>
                 <div class="hidden md:flex items-center gap-8 font-medium text-gray-600">
                     <a href="#features" class="hover:text-emerald-600 transition">Features</a>
@@ -31,8 +31,9 @@
                     <a href="#pricing" class="hover:text-emerald-600 transition">Pricing</a>
                 </div>
                 <div class="flex items-center gap-4">
-                    <button id="nav-login-btn" class="text-gray-600 hover:text-emerald-600 font-medium px-3 py-2">Log In</button>
-                    <button id="nav-signup-btn" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-5 py-2.5 rounded-lg shadow-sm transition trigger-stk">Sign Up</button>
+                    <a href="login.html" id="nav-login-btn" class="text-gray-600 hover:text-emerald-600 font-medium px-3 py-2">Log In</a>
+                    <!-- Updated to link directly to signup.html -->
+                    <a href="signup.html" id="nav-signup-btn" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-5 py-2.5 rounded-lg shadow-sm transition inline-block">Sign Up</a>
                 </div>
             </div>
         </div>
@@ -48,9 +49,10 @@
                 AdPesa connects publishers and advertisers across East Africa with automated, real-time mobile money payouts. No waiting 30 days for earnings.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button id="hero-get-started-btn" class="bg-white text-emerald-700 hover:bg-emerald-50 font-bold px-8 py-4 rounded-xl shadow-lg text-lg transition trigger-stk">
+                <!-- Updated to link directly to signup.html -->
+                <a href="signup.html" id="hero-get-started-btn" class="bg-white text-emerald-700 hover:bg-emerald-50 font-bold px-8 py-4 rounded-xl shadow-lg text-lg transition inline-block">
                     Start Earning Today
-                </button>
+                </a>
                 <button id="hero-demo-btn" class="bg-emerald-800 bg-opacity-40 hover:bg-opacity-60 border border-emerald-300 text-white font-semibold px-8 py-4 rounded-xl text-lg transition">
                     Watch Demo
                 </button>
@@ -90,9 +92,10 @@
         <div class="max-w-4xl mx-auto px-4">
             <h2 class="text-3xl font-bold mb-4">Ready to boost your ad earnings?</h2>
             <p class="text-gray-400 mb-8">Join thousands of publishers using AdPesa for seamless mobile money settlement.</p>
-            <button id="cta-register-btn" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-8 py-3.5 rounded-lg transition trigger-stk">
+            <!-- Updated to link directly to signup.html -->
+            <a href="signup.html" id="cta-register-btn" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-8 py-3.5 rounded-lg transition inline-block">
                 Create Free Account
-            </button>
+            </a>
         </div>
     </section>
 
@@ -186,7 +189,7 @@
                 modal.classList.add('hidden');
             };
 
-            // Attach open modal listener to key action buttons
+            // Attach open modal listener to trigger elements with class .trigger-stk
             document.querySelectorAll('.trigger-stk').forEach(button => {
                 button.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -230,11 +233,6 @@
                 }, 4000);
             });
 
-            // Login button action placeholder
-            document.getElementById('nav-login-btn')?.addEventListener('click', () => {
-                alert('Redirecting to Login portal...');
-            });
-            
             // Watch Demo action placeholder
             document.getElementById('hero-demo-btn')?.addEventListener('click', () => {
                 alert('Opening AdPesa workflow video demo...');
