@@ -31,8 +31,9 @@
                     <a href="#pricing" class="hover:text-emerald-600 transition">Pricing</a>
                 </div>
                 <div class="flex items-center gap-4">
-                    <a href="login.html" id="nav-login-btn" class="text-gray-600 hover:text-emerald-600 font-medium px-3 py-2">Log In</a>
-                    <!-- Updated to link directly to signup.html -->
+                    <!-- Linked to login.html -->
+                    <a href="login.html" id="nav-login-btn" class="text-gray-600 hover:text-emerald-600 font-medium px-3 py-2 transition">Log In</a>
+                    <!-- Linked to signup.html -->
                     <a href="signup.html" id="nav-signup-btn" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-5 py-2.5 rounded-lg shadow-sm transition inline-block">Sign Up</a>
                 </div>
             </div>
@@ -49,7 +50,6 @@
                 AdPesa connects publishers and advertisers across East Africa with automated, real-time mobile money payouts. No waiting 30 days for earnings.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <!-- Updated to link directly to signup.html -->
                 <a href="signup.html" id="hero-get-started-btn" class="bg-white text-emerald-700 hover:bg-emerald-50 font-bold px-8 py-4 rounded-xl shadow-lg text-lg transition inline-block">
                     Start Earning Today
                 </a>
@@ -87,12 +87,83 @@
         </div>
     </section>
 
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-slate-50 border-t border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900">How It Works</h2>
+                <p class="text-gray-600 mt-2">Get started in three simple steps and monetize your platform effortlessly.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 relative">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 relative">
+                    <div class="w-10 h-10 bg-emerald-600 text-white font-bold rounded-full flex items-center justify-center mb-6">1</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Create an Account</h3>
+                    <p class="text-gray-600">Sign up as a Publisher or Advertiser in under two minutes and set up your profile details.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 relative">
+                    <div class="w-10 h-10 bg-emerald-600 text-white font-bold rounded-full flex items-center justify-center mb-6">2</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Embed Ad Placements</h3>
+                    <p class="text-gray-600">Copy our lightweight JavaScript snippet and place banner or native ad units onto your website.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 relative">
+                    <div class="w-10 h-10 bg-emerald-600 text-white font-bold rounded-full flex items-center justify-center mb-6">3</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Get Paid via M-Pesa</h3>
+                    <p class="text-gray-600">Watch your revenue accrue in real time and trigger instant STK payouts straight to your phone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900">Transparent Pricing</h2>
+                <p class="text-gray-600 mt-2">No hidden fees. Choose the model that fits your advertising or publishing needs.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Publisher Plan -->
+                <div class="p-8 border border-gray-200 rounded-2xl bg-gray-50 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-emerald-600 bg-emerald-100 px-3 py-1 rounded-full">For Content Creators</span>
+                        <h3 class="text-2xl font-bold text-gray-900 mt-4 mb-2">Publishers</h3>
+                        <p class="text-gray-600 text-sm mb-6">Monetize site traffic with flexible ad formats and zero monthly fees.</p>
+                        <div class="text-4xl font-extrabold text-gray-900 mb-6">Free <span class="text-base font-normal text-gray-500">to join</span></div>
+                        <ul class="space-y-3 text-sm text-gray-600 mb-8">
+                            <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> 85% Revenue Share</li>
+                            <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> Instant M-Pesa Payouts</li>
+                            <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> Low Minimum Withdrawal (KES 100)</li>
+                            <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> Real-Time Impression & Click Tracking</li>
+                        </ul>
+                    </div>
+                    <a href="signup.html" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-center font-bold py-3 rounded-lg transition">Start Monetizing</a>
+                </div>
+                <!-- Advertiser Plan -->
+                <div class="p-8 border-2 border-emerald-500 rounded-2xl bg-white shadow-md flex flex-col justify-between relative">
+                    <span class="absolute -top-3 right-6 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Popular</span>
+                    <div>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">For Brands & Marketers</span>
+                        <h3 class="text-2xl font-bold text-gray-900 mt-4 mb-2">Advertisers</h3>
+                        <p class="text-gray-600 text-sm mb-6">Run targeted mobile and web campaigns across high-converting networks.</p>
+                        <div class="text-4xl font-extrabold text-gray-900 mb-6">Pay-Per-Click <span class="text-base font-normal text-gray-500">/ Impression</span></div>
+                        <ul class="space-y-3 text-sm text-gray-600 mb-8">
+                            <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> Instant M-Pesa Deposit / Campaign Budgeting</li>
+                            <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> Anti-Fraud & Bot Filtering</li>
+                            <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> Geo-Targeting across East Africa</li>
+                            <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> Automated Campaign Optimization</li>
+                        </ul>
+                    </div>
+                    <a href="signup.html" class="w-full bg-gray-900 hover:bg-gray-800 text-white text-center font-bold py-3 rounded-lg transition">Launch Campaign</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="py-16 bg-gray-900 text-white text-center">
         <div class="max-w-4xl mx-auto px-4">
             <h2 class="text-3xl font-bold mb-4">Ready to boost your ad earnings?</h2>
             <p class="text-gray-400 mb-8">Join thousands of publishers using AdPesa for seamless mobile money settlement.</p>
-            <!-- Updated to link directly to signup.html -->
             <a href="signup.html" id="cta-register-btn" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-8 py-3.5 rounded-lg transition inline-block">
                 Create Free Account
             </a>
@@ -172,24 +243,20 @@
             const phoneDisplay = document.getElementById('target-phone-display');
             const txnIdDisplay = document.getElementById('txn-id');
 
-            // 1. Function to open modal
             const openModal = () => {
                 modal.classList.add('modal-active');
                 modal.classList.remove('hidden');
-                // Reset states inside modal
                 stkForm.classList.remove('hidden');
                 stkLoading.classList.add('hidden');
                 stkSuccess.classList.add('hidden');
                 phoneInput.value = '';
             };
 
-            // 2. Function to close modal
             const closeModal = () => {
                 modal.classList.remove('modal-active');
                 modal.classList.add('hidden');
             };
 
-            // Attach open modal listener to trigger elements with class .trigger-stk
             document.querySelectorAll('.trigger-stk').forEach(button => {
                 button.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -199,41 +266,34 @@
 
             closeModalBtn.addEventListener('click', closeModal);
 
-            // Close modal when clicking outside content area
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) closeModal();
             });
 
-            // 3. Handle STK Form Submission & Simulated M-Pesa Callback Flow
             stkForm.addEventListener('submit', (e) => {
                 e.preventDefault();
                 const rawPhone = phoneInput.value.trim();
                 const formattedPhone = `+254 ${rawPhone}`;
 
-                // Show loading state
                 stkForm.classList.add('hidden');
                 phoneDisplay.innerText = formattedPhone;
                 stkLoading.classList.remove('hidden');
 
-                // SIMULATION STEP: Simulate M-Pesa Callback response delay (4 seconds)
                 setTimeout(() => {
                     stkLoading.classList.add('hidden');
-                    
-                    // Generate pseudo transaction receipt ID (e.g., RK98234721)
                     const randomTxnId = 'RK' + Math.floor(10000000 + Math.random() * 90000000);
                     txnIdDisplay.innerText = randomTxnId;
                     
                     stkSuccess.classList.remove('hidden');
 
-                    // Auto-close modal after success
                     setTimeout(() => {
                         closeModal();
+                        window.location.href = 'dashboard.html';
                     }, 3500);
 
                 }, 4000);
             });
 
-            // Watch Demo action placeholder
             document.getElementById('hero-demo-btn')?.addEventListener('click', () => {
                 alert('Opening AdPesa workflow video demo...');
             });
