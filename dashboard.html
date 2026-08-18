@@ -1,192 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard - AdPesa</title>
-  <!-- Tailwind CSS via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publisher Dashboard - AdPesa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: { DEFAULT: '#E50914', hover: '#B91C1C' },
+                        brandGreen: { DEFAULT: '#009A44', hover: '#007A36' }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="bg-slate-100 text-slate-800 antialiased min-h-screen flex flex-col">
-
-  <!-- Top Navigation Bar -->
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-30">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
-      
-      <!-- Brand Logo -->
-      <a href="index.html" class="flex items-center space-x-2 text-xl font-bold text-slate-900">
-        <span class="text-emerald-600 text-2xl">AdPesa</span>
-      </a>
-
-      <!-- Right Profile & Navigation Controls -->
-      <div class="flex items-center space-x-4">
-        <div class="hidden sm:flex items-center space-x-2 text-sm text-slate-600 bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-full">
-          <span class="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse"></span>
-          <span class="font-medium text-slate-700">Publisher Portal</span>
+<body class="bg-slate-100 flex min-h-screen font-sans">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-slate-900 text-white flex flex-col justify-between hidden md:flex">
+        <div class="p-6">
+            <a href="index.html" class="text-2xl font-black tracking-tight"><span class="text-brandRed">Ad</span><span class="text-brandGreen">Pesa</span></a>
+            <nav class="mt-8 space-y-2">
+                <a href="#" class="flex items-center gap-3 bg-slate-800 text-brandGreen font-bold px-4 py-3 rounded-lg">📊 Overview</a>
+                <a href="#" class="flex items-center gap-3 text-slate-400 hover:text-white px-4 py-3 rounded-lg transition">📈 Analytics</a>
+                <a href="#" class="flex items-center gap-3 text-slate-400 hover:text-white px-4 py-3 rounded-lg transition">📲 Ad Placements</a>
+                <a href="#" class="flex items-center gap-3 text-slate-400 hover:text-white px-4 py-3 rounded-lg transition">💸 Withdrawal History</a>
+            </nav>
         </div>
-        
-        <a href="index.html" class="text-sm text-slate-600 hover:text-red-600 font-medium transition py-1.5 px-3 border border-slate-200 rounded-lg hover:bg-slate-50">
-          Log Out
-        </a>
-      </div>
-
-    </div>
-  </header>
-
-  <!-- Main Content Layout -->
-  <main class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 space-y-8">
-
-    <!-- Welcome & M-Pesa Quick Payout Header -->
-    <div class="bg-gradient-to-r from-emerald-600 to-teal-700 rounded-2xl p-6 sm:p-8 text-white shadow-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-      <div>
-        <h1 class="text-2xl sm:text-3xl font-extrabold mb-1">Welcome back, Partner! 👋</h1>
-        <p class="text-emerald-100 text-sm sm:text-base">Track your real-time campaign performance and request direct M-Pesa payouts.</p>
-      </div>
-      
-      <div class="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl flex items-center gap-4 w-full md:w-auto">
-        <div>
-          <p class="text-xs uppercase tracking-wider text-emerald-200 font-semibold">Available for Payout</p>
-          <p class="text-2xl font-bold">KES 14,850.00</p>
+        <div class="p-6 border-t border-slate-800">
+            <a href="login.html" class="text-slate-400 hover:text-brandRed font-medium text-sm">← Log Out</a>
         </div>
-        <button id="withdrawBtn" class="bg-white text-emerald-700 font-bold px-4 py-2.5 rounded-lg shadow hover:bg-emerald-50 transition text-sm whitespace-nowrap">
-          Withdraw to M-Pesa
-        </button>
-      </div>
-    </div>
+    </aside>
 
-    <!-- Analytics Key Metrics Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-      
-      <!-- Card 1 -->
-      <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-        <p class="text-xs font-semibold uppercase text-slate-400 tracking-wider">Total Revenue</p>
-        <p class="text-2xl font-extrabold text-slate-900 mt-2">KES 48,200</p>
-        <p class="text-xs text-emerald-600 font-medium mt-1">↑ +14.2% from last month</p>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-        <p class="text-xs font-semibold uppercase text-slate-400 tracking-wider">Total Impressions</p>
-        <p class="text-2xl font-extrabold text-slate-900 mt-2">124,500</p>
-        <p class="text-xs text-emerald-600 font-medium mt-1">↑ +8.5% from last week</p>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-        <p class="text-xs font-semibold uppercase text-slate-400 tracking-wider">Total Clicks</p>
-        <p class="text-2xl font-extrabold text-slate-900 mt-2">3,820</p>
-        <p class="text-xs text-slate-500 font-medium mt-1">Avg. CTR: 3.06%</p>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-        <p class="text-xs font-semibold uppercase text-slate-400 tracking-wider">Active Campaigns</p>
-        <p class="text-2xl font-extrabold text-slate-900 mt-2">6</p>
-        <p class="text-xs text-emerald-600 font-medium mt-1">● 100% operational</p>
-      </div>
-
-    </div>
-
-    <!-- Active Campaigns & Recent M-Pesa Payouts Table Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-      
-      <!-- Active Ad Units / Campaigns (2 Columns) -->
-      <div class="lg:col-span-2 bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
-        <div class="px-6 py-4 border-b border-slate-100 flex justify-between items-center">
-          <h2 class="font-bold text-slate-800">Active Ad Placements</h2>
-          <button class="text-xs text-emerald-600 font-semibold hover:underline">+ New Ad Unit</button>
-        </div>
-        
-        <div class="overflow-x-auto">
-          <table class="w-full text-left border-collapse text-sm">
-            <thead>
-              <tr class="bg-slate-50 text-slate-500 text-xs uppercase font-semibold border-b border-slate-100">
-                <th class="py-3 px-6">Ad Name</th>
-                <th class="py-3 px-6">Format</th>
-                <th class="py-3 px-6">Clicks</th>
-                <th class="py-3 px-6">Earnings</th>
-                <th class="py-3 px-6 text-right">Status</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-slate-100 text-slate-700">
-              <tr>
-                <td class="py-3.5 px-6 font-medium">Header Banner 728x90</td>
-                <td class="py-3.5 px-6 text-slate-500">Display</td>
-                <td class="py-3.5 px-6">1,420</td>
-                <td class="py-3.5 px-6 font-semibold text-slate-900">KES 6,100</td>
-                <td class="py-3.5 px-6 text-right"><span class="px-2.5 py-1 bg-emerald-100 text-emerald-700 text-xs rounded-full font-medium">Active</span></td>
-              </tr>
-              <tr>
-                <td class="py-3.5 px-6 font-medium">Mobile Footer Sticky</td>
-                <td class="py-3.5 px-6 text-slate-500">Overlay</td>
-                <td class="py-3.5 px-6">1,890</td>
-                <td class="py-3.5 px-6 font-semibold text-slate-900">KES 7,250</td>
-                <td class="py-3.5 px-6 text-right"><span class="px-2.5 py-1 bg-emerald-100 text-emerald-700 text-xs rounded-full font-medium">Active</span></td>
-              </tr>
-              <tr>
-                <td class="py-3.5 px-6 font-medium">In-Article Widget</td>
-                <td class="py-3.5 px-6 text-slate-500">Native</td>
-                <td class="py-3.5 px-6">510</td>
-                <td class="py-3.5 px-6 font-semibold text-slate-900">KES 1,500</td>
-                <td class="py-3.5 px-6 text-right"><span class="px-2.5 py-1 bg-emerald-100 text-emerald-700 text-xs rounded-full font-medium">Active</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- M-Pesa Payout History (1 Column) -->
-      <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6 flex flex-col justify-between">
-        <div>
-          <h2 class="font-bold text-slate-800 mb-4">Recent M-Pesa Payouts</h2>
-          
-          <div class="space-y-4">
-            <div class="flex justify-between items-center border-b border-slate-100 pb-3">
-              <div>
-                <p class="text-sm font-semibold text-slate-800">KES 5,000.00</p>
-                <p class="text-xs text-slate-400">Ref: RK83910291 • Yesterday</p>
-              </div>
-              <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md">Paid</span>
+    <!-- Main Content -->
+    <main class="flex-1 p-8">
+        <header class="flex justify-between items-center mb-8">
+            <div>
+                <h1 class="text-2xl font-bold text-gray-900">Dashboard</h1>
+                <p class="text-sm text-gray-500">Welcome back, Developer</p>
             </div>
-
-            <div class="flex justify-between items-center border-b border-slate-100 pb-3">
-              <div>
-                <p class="text-sm font-semibold text-slate-800">KES 10,000.00</p>
-                <p class="text-xs text-slate-400">Ref: RK72619401 • Aug 12, 2026</p>
-              </div>
-              <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md">Paid</span>
+            <div class="w-10 h-10 bg-brandRed text-white rounded-full flex items-center justify-center font-bold">
+                AD
             </div>
+        </header>
 
-            <div class="flex justify-between items-center border-b border-slate-100 pb-3">
-              <div>
-                <p class="text-sm font-semibold text-slate-800">KES 3,500.00</p>
-                <p class="text-xs text-slate-400">Ref: RK51829302 • Aug 05, 2026</p>
-              </div>
-              <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md">Paid</span>
+        <!-- Metric Cards -->
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm border-l-4 border-l-brandGreen">
+                <p class="text-sm font-semibold text-gray-500">Current Balance</p>
+                <h3 class="text-3xl font-extrabold text-brandGreen mt-2">KES 14,850.00</h3>
             </div>
-          </div>
+            <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm border-l-4 border-l-brandRed">
+                <p class="text-sm font-semibold text-gray-500">Total Impressions</p>
+                <h3 class="text-3xl font-extrabold text-gray-900 mt-2">128,450</h3>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm border-l-4 border-l-gray-900">
+                <p class="text-sm font-semibold text-gray-500">Average CTR</p>
+                <h3 class="text-3xl font-extrabold text-gray-900 mt-2">3.42%</h3>
+            </div>
         </div>
 
-        <button class="w-full mt-6 py-2 border border-slate-200 text-slate-600 text-xs font-semibold rounded-lg hover:bg-slate-50 transition">
-          View All Transactions
-        </button>
-      </div>
-
-    </div>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs text-slate-500">
-    &copy; 2026 AdPesa Technologies. All rights reserved.
-  </footer>
-
-  <!-- Quick Action Script -->
-  <script>
-    document.getElementById('withdrawBtn')?.addEventListener('click', () => {
-      alert('M-Pesa Payout Request Sent! You will receive an SMS confirmation shortly.');
-    });
-  </script>
-
+        <!-- STK Withdrawal Action -->
+        <div class="bg-gradient-to-r from-brandGreen to-emerald-700 text-white p-6 rounded-2xl shadow-lg flex flex-col sm:flex-row justify-between items-center mb-8">
+            <div>
+                <h3 class="text-xl font-bold">Ready for Instant Withdrawal?</h3>
+                <p class="text-sm text-emerald-100 mt-1">Minimum payout threshold (KES 100) reached.</p>
+            </div>
+            <button class="mt-4 sm:mt-0 bg-white text-brandGreen hover:bg-emerald-50 font-bold px-6 py-3 rounded-xl shadow transition">
+                Withdraw via M-Pesa 📲
+            </button>
+        </div>
+    </main>
 </body>
 </html>
